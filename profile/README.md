@@ -1,7 +1,7 @@
 ## Hi there 👋
 
 
-We make minecraft mods
+We make mods for various games including Minecraft 
 <!--
 
 **Here are some ideas to get you started:**
