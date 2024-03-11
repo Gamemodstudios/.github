@@ -1,3 +1,5 @@
+![gamemodstudios_no background](https://github.com/Game-mods-studio/.github/assets/121717620/80e7a413-f3ce-41cd-a922-cb4fa3e22fc6)
+
 # Game Mod Studios
 
 ## Hi there! 👋
