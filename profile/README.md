@@ -1,14 +1,14 @@
 ![gamemodstudios_no background](https://github.com/Game-mods-studio/.github/assets/121717620/80e7a413-f3ce-41cd-a922-cb4fa3e22fc6)
 
-# Game Mod Studios
+# Gamemodstudios
 
 ## Hi there! 👋
 
-Welcome to Game Mod Studios – Where Imagination Meets Innovation! 🚀
+Welcome to Gamemodstudios – Where Imagination Meets Innovation! 🚀
 
 ## About Us
 
-At Game Mod Studios, we are dedicated to crafting exciting and innovative mods for various games, with a special focus on Minecraft.
+At Gamemodstudios, we are dedicated to crafting exciting and innovative mods for various games
 
 ## Our Mods
 
@@ -37,6 +37,6 @@ We love engaging with fellow gamers and mod enthusiasts! Join our community to s
 
 ## Thank You
 
-Thank you for being a part of the Game Mod Studios community! Your support fuels our creativity, and we look forward to sharing more exciting mods with you.
+Thank you for being a part of the Gamemodstudios community! Your support fuels our creativity, and we look forward to sharing more exciting mods with you.
 
 Happy gaming! 🎮✨
