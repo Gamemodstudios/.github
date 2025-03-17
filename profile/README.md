@@ -21,7 +21,7 @@ Discover our curated selection of Minecraft mods, each crafted to bring new adve
 ### Featured Minecraft Mods
 
 1. [op_tools](https://modrinth.com/mod/op_tools)
-2. [op_bosses](https://modrinth.com/mod/op_bosses) in the makeing
+2. [op_bosses](https://modrinth.com/mod/op_bosses) in the making
 
 
 Explore our full collection on [Modrinth](https://modrinth.com/organization/gamemodstudios) for the latest updates and releases.
