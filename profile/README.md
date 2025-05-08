@@ -32,7 +32,7 @@ We love engaging with fellow gamers and mod enthusiasts! Join our community to s
 
 - X: [@Gamemodstudios0](https://twitter.com/Gamemodstudios0)
 - Youtube: [Gamemodstudios0](https://www.youtube.com/channel/UCBLccaHFP7gEwMkfIuyECYA)
-- Patreon: [Gamemodstudios](https://patreon.com/randommodsforonegame?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)
+- Patreon: [Gamemodstudios](https://www.patreon.com/Gamemodstudios)
 - Twitch: [Gamemodstudios](https://www.twitch.tv/gamemodstudios)
 
 ## Thank You
