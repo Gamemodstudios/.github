@@ -33,7 +33,6 @@ Explore our portfolio of **mods designed for creativity, fun, and freedom**. Fro
 ### 🎮 Minecraft Mods (Highlighted)
 
 * 🔨 [OP Tools](https://modrinth.com/mod/op_tools) – A high-power toolkit for builders and explorers
-* 🐉 [OP Bosses](https://modrinth.com/mod/op_bosses) *(in development)* – Epic boss battles for endgame thrills
 
 👉 Check out our full catalog on [**Modrinth**](https://modrinth.com/organization/gamemodstudios)
 
