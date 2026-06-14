@@ -1,0 +1,8 @@
+{
+    "name": "PR Auto Assign",
+    "description": "Automatically assigns the creator of a Pull Request to that Pull Request for clear tracking.",
+    "iconName": "user",
+    "categories": [
+        "Project Management"
+    ]
+}
