@@ -1,0 +1,8 @@
+{
+    "name": "Node.js CI Template",
+    "description": "Standard organization workflow to install dependencies, lint, and run tests for Node.js projects.",
+    "iconName": "node",
+    "categories": [
+        "Continuous Integration"
+    ]
+}
