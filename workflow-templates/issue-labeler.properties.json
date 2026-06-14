@@ -1,0 +1,8 @@
+{
+    "name": "Auto Issue Labeler",
+    "description": "Automatically scans new issues for keywords and applies structural labels like frontend, backend, or docs.",
+    "iconName": "tag",
+    "categories": [
+        "Project Management"
+    ]
+}
