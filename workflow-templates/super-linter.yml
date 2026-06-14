@@ -1,0 +1,31 @@
+name: Code Quality Linting
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+permissions:
+  contents: read
+  packages: read
+  statuses: write
+
+jobs:
+  lint:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Super-Linter needs full git history to scan changes efficiently
+          fetch-depth: 0
+
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v7
+        env:
+          VALIDATE_ALL_CODEBASE: false # Only lints changed files on PRs (much faster)
+          DEFAULT_BRANCH: $default-branch
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
