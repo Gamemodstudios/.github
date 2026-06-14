@@ -1,0 +1,8 @@
+{
+    "name": "Global Super-Linter",
+    "description": "Multi-language linter that validates syntax and style rules across JavaScript, Python, HTML, Markdown, YAML, and more.",
+    "iconName": "shield",
+    "categories": [
+        "Code Quality"
+    ]
+}
