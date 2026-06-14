@@ -1,0 +1,41 @@
+name: Auto Issue Labeler
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Market and Triage Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const title = issue.title.toLowerCase();
+            const body = (issue.body || "").toLowerCase();
+            const labelsToAdd = [];
+
+            // Define your keyword mappings here
+            if (title.includes("css") || body.includes("ui") || body.includes("frontend")) {
+              labelsToAdd.push("frontend");
+            }
+            if (title.includes("api") || body.includes("database") || body.includes("backend")) {
+              labelsToAdd.push("backend");
+            }
+            if (title.includes("docs") || body.includes("readme") || body.includes("documentation")) {
+              labelsToAdd.push("documentation");
+            }
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labelsToAdd
+              });
+            }
