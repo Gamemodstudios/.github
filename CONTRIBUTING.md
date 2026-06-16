@@ -14,7 +14,7 @@ Thank you for your interest in contributing to our organization! We are thrilled
 
 3. **Set up Upstream:** Keep your fork up to date by adding the main repository as an upstream remote:
 ```bash
-git remote add upstream [https://github.com/YOUR-ORGANIZATION/REPO-NAME.git](https://github.com/YOUR-ORGANIZATION/REPO-NAME.git)
+git remote add upstream [https://github.com/Gamemodstudios/REPO-NAME.git](https://github.com/Gamemodstudios/REPO-NAME.git)
 
 ```
 
