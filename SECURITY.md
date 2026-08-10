@@ -6,7 +6,9 @@ We actively monitor and patch security vulnerabilities. The table below outlines
 
 | Version | Supported          |
 | ------- | ------------------ |
-| v1.x    | Yes                |
+| v2.x    | 😎 Yes             |
+| v1.x    | ⚠️ Security Only   |
+| < v1.0  | ❌ No              |
 
 ## Reporting a Vulnerability
 
