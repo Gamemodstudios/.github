@@ -14,7 +14,7 @@ We actively monitor and patch security vulnerabilities. The table below outlines
 
 **Please do not open a public GitHub issue for security vulnerabilities.** If you discover a potential security vulnerability within any repository in this organization, please report it responsibly by following these steps:
 
-1. **Submit Privately:** Use GitHub's private vulnerability reporting feature on the specific repository if enabled, or email us directly at **gamemodstudios+security@gmail.com**.
+1. **Submit Privately:** Use GitHub's private vulnerability reporting feature on the specific repository if enabled, or email us directly at **security@gamemodstudios.com**.
 2. **Details to Include:** * A description of the vulnerability and its potential impact.
    * Clear, step-by-step instructions to reproduce the issue (including proof-of-concept code or scripts if available).
    * The version(s) of the software affected.
