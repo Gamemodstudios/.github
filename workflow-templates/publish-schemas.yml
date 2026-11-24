@@ -1,0 +1,101 @@
+name: Publish Schemas to Registry
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Override schema version folder (e.g. v1.0.0 or main-dev)"
+        required: false
+        type: string
+
+env:
+  PROJECT_NAME: replace-with-project-slug
+  REGISTRY_REPO: Gamemodstudios/schemas
+  SCHEMA_DOMAIN: https://schemas.gamemodstudios.com
+  EMIT_DIR: schema-dist
+
+jobs:
+  publish-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout producer repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Resolve schema version
+        id: version
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          elif [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            VERSION="${{ github.ref_name }}"
+          else
+            SHORT_SHA="$(git rev-parse --short HEAD)"
+            VERSION="main-${SHORT_SHA}"
+          fi
+          echo "value=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Emit schemas
+        shell: bash
+        run: |
+          rm -rf "${{ env.EMIT_DIR }}"
+          mkdir -p "${{ env.EMIT_DIR }}"
+
+          # Example: run your code-first generator or copy static schemas into $EMIT_DIR
+          # bun run scripts/export-schemas.ts --out "${{ env.EMIT_DIR }}"
+          if [ -d "schemas" ]; then
+            cp -R schemas/. "${{ env.EMIT_DIR }}/"
+          fi
+
+          COUNT=$(find "${{ env.EMIT_DIR }}" -type f | wc -l)
+          echo "Emitted ${COUNT} file(s) for ${{ env.PROJECT_NAME }}@${{ steps.version.outputs.value }}"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::error::No schema files found in ${{ env.EMIT_DIR }}"
+            exit 1
+          fi
+
+      - name: Pack payload
+        id: pack
+        shell: bash
+        run: |
+          tar -czf /tmp/schemas.tar.gz -C "${{ env.EMIT_DIR }}" .
+          BYTES=$(wc -c < /tmp/schemas.tar.gz)
+          echo "Payload archive size: ${BYTES} bytes"
+          if [ "$BYTES" -gt 450000 ]; then
+            echo "::error::Archive exceeds safe repository_dispatch payload size (${BYTES} bytes)."
+            exit 1
+          fi
+
+          ARCHIVE_B64="$(base64 -w 0 /tmp/schemas.tar.gz)"
+          {
+            echo "archive_b64<<EOF"
+            echo "${ARCHIVE_B64}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch to Gamemodstudios/schemas
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SCHEMA_REGISTRY_DISPATCH_TOKEN }}
+          repository: ${{ env.REGISTRY_REPO }}
+          event-type: schema-publish
+          client-payload: |
+            {
+              "project": "${{ env.PROJECT_NAME }}",
+              "version": "${{ steps.version.outputs.value }}",
+              "source_repo": "${{ github.repository }}",
+              "source_sha": "${{ github.sha }}",
+              "archive_b64": "${{ steps.pack.outputs.archive_b64 }}"
+            }
