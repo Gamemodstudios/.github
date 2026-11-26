@@ -1,8 +1,0 @@
-{
-    "name": "Publish Schemas",
-    "description": "Publishes schemas to Gamemodstudios schema registry",
-    "iconName": "octicon arrow-up-right",
-    "categories": [
-        "Project Management"
-    ]
-}1
